@@ -1,0 +1,46 @@
+<aura:component >
+    
+   <aura:attribute name="Apple" type="boolean" default="true"/>
+   <aura:attribute name="Orange" type="boolean" default="false"/>
+   <aura:attribute name="Grapes" type="boolean" default="true"/>
+   <aura:attribute name="Mango" type="boolean" default="false"/>
+ 
+    
+  <!--aura:if sample -->
+   <aura:if isTrue="{!and(v.Apple, v.Grapes)}" >
+      <div>
+        AND CONDITION:  "Apple" attribute is true AND "Grapes" attribute is also true.
+      </div>
+   </aura:if>
+    
+    
+    
+    
+   <!--aura:if with aura:set sample-->
+   <aura:if isTrue="{!or(v.Mango, v.Orange)}" >
+      
+       <div>
+         OR CONDITION:  "Mango" attribute is true OR "Orange" attribute is true OR Both are TRUE.
+      </div>
+       
+      <aura:set attribute="else">
+         <div>
+          AURA SET:  "Mango" attribute is false and "Orange" attribute is also false.
+         </div>
+      </aura:set>
+       
+   </aura:if>
+    
+    
+    
+    
+   <!--aura:if with nested and condition-->
+   <aura:if isTrue="{!or(and(v.Apple, v.Grapes) , v.Orange ) }" >
+      <div>
+       NESTED CONDITION:  Apple and Grapes are True, ORANGE MAY BE TRUE or FALSE 
+      </div>
+   </aura:if>
+    
+    
+    
+</aura:component>

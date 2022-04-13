@@ -1,0 +1,9 @@
+<aura:component  controller="ListViewController" implements="flexipage:availableForAllPageTypes,force:lightningQuickAction" access="global">
+   
+    
+    <lightning:listView objectApiName="Contact"
+                        listName="Customized_Contact_View"
+                        rows="10"
+                        />
+
+</aura:component>
